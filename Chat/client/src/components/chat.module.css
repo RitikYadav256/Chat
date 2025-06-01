@@ -1,0 +1,322 @@
+/* chat.module.css */
+
+/* Reset some defaults */
+* {
+  box-sizing: border-box;
+}
+
+.appWrapper {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f9fc;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 700px;
+  margin-top:100px;
+  height: 90vh;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+}
+
+/* Chat messages area */
+.chatBox {
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  background-color: #e9eff5;
+  scroll-behavior: smooth;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Each message container */
+.message {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  outline: none;
+  
+}
+
+/* Messages from self aligned right */
+/* Message bubble */
+.bubble {
+  
+  max-width: 70%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  padding: 0.5rem 0.75rem;
+  border-radius: 16px;
+  position: relative;
+  word-wrap: break-word;
+  font-size: 1rem;
+  line-height: 1.3;
+  user-select: text;
+}
+
+/* Outgoing message bubble style */
+
+
+/* Text messages */
+.messageText {
+  white-space: pre-wrap;
+  text-align: left;
+  font-size: 15px;
+  
+}
+
+.name1{
+  font-size: 8px;
+  border: 1px solid green;
+  border-radius: 30px;
+  padding: 5px;
+  background-color: green;
+  color: white;
+}
+/* Media messages (image/video) */
+.media {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Timestamp below message */
+.timestamp {
+  font-size: 0.29rem;
+  color: #666;
+  margin-top: 0.25rem;
+  display: block;
+  text-align: right;
+  margin-left: 6px;
+}
+
+/* Input area container */
+.inputArea {
+  display: flex;
+  padding: 0.5rem 1rem;
+  gap: 0.5rem;
+  background: #f1f1f1;
+  align-items: center;
+}
+
+/* Text input */
+.input {
+  flex-grow: 1;
+  padding: 0.5rem 0.75rem;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input:focus {
+  border-color: #007bff;
+}
+
+/* Buttons */
+.sendButton,
+.uploadButton,
+.emojiToggleBtn {
+  background: #007bff;
+  color: white;
+  border: none;
+  font-size: 1.3rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.sendButton {
+  border-radius: 20px;
+  font-weight: bold;
+  padding: 0.4rem 1rem;
+}
+
+.sendButton:hover,
+.uploadButton:hover,
+.emojiToggleBtn:hover {
+  background: #0056b3;
+}
+
+.uploadButton {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Emoji picker container */
+.emojiPicker {
+  position: absolute;
+  bottom: 70px;
+  left: 10px;
+  z-index: 1000;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  background: white;
+  overflow: hidden;
+}
+
+/* Edit input inside message bubble */
+.editInput {
+  width: 100%;
+  padding: 0.3rem 0.5rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  margin-bottom: 0.3rem;
+}
+
+.editInput:focus {
+  border-color: #007bff;
+}
+
+/* Edit buttons container */
+.editButtons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+/* Save and cancel buttons */
+.saveBtn,
+.cancelBtn {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  user-select: none;
+}
+
+.saveBtn {
+  color: #28a745; /* green */
+}
+
+.cancelBtn {
+  color: #dc3545; /* red */
+}
+
+/* Menu wrapper and button */
+.menuWrapper {
+  position: relative;
+  margin-left: 0.5rem;
+  align-self: center;
+}
+
+.menuButton {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  color: #666;
+  user-select: none;
+}
+
+.menuButton:hover,
+.menuButton:focus {
+  color: #007bff;
+}
+
+/* Menu dropdown */
+.menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 10;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menuItem {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.menuItem:hover,
+.menuItem:focus {
+  background-color: #007bff;
+  color: white;
+  outline: none;
+}
+
+/* Accessibility focus styles */
+.message:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 667px) {
+  .container {
+    height: 80vh;
+    border-radius: 0;
+    width: 100%;
+  }
+
+  .chatBox {
+    padding: 0.5rem;
+  }
+
+  
+  .bubble {
+    font-size: 0.3rem;
+  }
+
+  .inputArea {
+   display: flex;
+    gap: 0.1rem;
+  }
+
+  .input {
+    flex-grow: 1;
+    width: 20px;
+  }
+
+  .sendButton {
+    border-radius: 5px;
+    font-size: 1.1rem;
+    
+  }
+
+  .emojiPicker {
+    bottom: 100px;
+    left: 5px;
+    right: 5px;
+    max-width: none;
+    width: auto;
+  }
+
+  .media {
+    max-height: 80px;
+  }
+}

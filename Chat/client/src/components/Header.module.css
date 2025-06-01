@@ -1,0 +1,122 @@
+.header {
+  background-color: #2e7d32;
+  padding: 12px 30px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  user-select: none;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.menuContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* App title/logo */
+.logo {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  margin: 0;
+}
+
+/* Navigation menu */
+.navMenu {
+  display: flex;
+  gap: 25px;
+}
+
+.navLink {
+  color: #c9f1c9;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navLink:hover {
+  background-color: #40ee10;
+  color: #fff;
+}
+
+.active {
+  background-color: #40ee10;
+  color: #fff;
+  box-shadow: 0 0 10px #40ee10aa;
+}
+
+/* Profile icon container */
+.profileIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 0 8px #40ee10aa;
+  transition: box-shadow 0.3s ease;
+}
+
+.profileIcon:hover {
+  box-shadow: 0 0 15px #40ee10cc;
+}
+
+.profileIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ✅ Responsive Styles */
+@media (max-width: 768px) {
+  .menuContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3px 0;
+  }
+
+  .navMenu {
+    gap: 5px;
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .navLink {
+    width: 100%;
+    padding: 10px 16px;
+    text-align: center;
+  }
+  .profileIcon {
+    width: 150px;
+    height: 100px;
+    margin-top: 10px;
+  }
+  .logo {
+    text-align: center;
+    margin-left: 38%;
+  }
+}
+@media (max-width: 480px) {
+  .logo {
+    text-align: center;
+    margin-left: 18%;
+    text-shadow: 3px 1px 1px solid black;
+  }
+  .profileIcon {
+    width: 300px;
+    height: 80px;
+    margin-top: 10px;
+  }
+
+  .navLink {
+    font-size: 0.95rem;
+  }
+}
