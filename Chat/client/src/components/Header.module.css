@@ -47,6 +47,13 @@
   color: #fff;
 }
 
+.askButton{
+    width: 100%;
+    border-radius: 5px;
+    background-color: #40ee10;
+    color: white;
+    font-size: 20px;
+  }
 .active {
   background-color: #40ee10;
   color: #fff;
