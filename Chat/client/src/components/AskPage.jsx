@@ -3,7 +3,7 @@ import React from "react";
 const AskPage = () => {
   const handleAsk = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/send-mail", {
+      const response = await fetch("https://chat-nlss.onrender.com/api/send-mail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
