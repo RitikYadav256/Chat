@@ -2,13 +2,42 @@ import React from 'react';
 import styles from './Header.module.css';
 
 function Header() {
+  const Call=async()=>{
+    try {
+      const response = await fetch("https://chat-nlss.onrender.com/api/send-mail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          subject: "Chat request",
+          message: "Hi i am Amaiyara and i am  online and i want to talk",
+        }),
+      });
+
+      const data = await response.json();
+      alert(data.message);
+    } catch (err) {
+      alert("Failed to send email.");
+      console.error(err);
+    }
+  }
   return (
     <header className={styles.header}>
       <div className={styles.menuContainer}>
         <h1 className={styles.logo}>Personal Chat</h1>
         <nav className={styles.navMenu}>
-          <a href="/" className={`${styles.navLink} ${styles.active}`}>Home</a>
-          <a href="/Ask" className={styles.navLink}>Ask</a>
+        <button 
+            className={styles.askButton} 
+          >
+            Home
+          </button>
+          <button 
+            className={styles.askButton} 
+            onClick={Call}
+          >
+            Call Me
+          </button>
           
           
           <div className={styles.profileIcon} title="User Profile">
